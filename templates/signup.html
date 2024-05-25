@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<TITLE>
+    Signup
+</TITLE>
+<head fontface="algerian">
+<H1>
+<CENTER><i> Signup</i></CENTER>
+</H1>
+
+</head>
+<body   >
+    <form  action='/signup' method="POST">
+        <center>
+        <TABLE BORDER="0">
+        <tr><td>User Name:</td><td><input type="text" name='name'></td></tr><br>
+        <tr><td>Pasword:</td><td><input type="text" name='password'></td></tr><br>
+        </table><br>
+        <input type="submit"  value="signup"> <a href="{{ url_for('home') }}">Back</a>
+        </form>
+    </center>
+    </body>
+</html>

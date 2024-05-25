@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        html { font-family: Arial; }
+        body { padding: 10px 30px; }
+        h1 { font-size: 1.8em; }
+        h2 { font-size: 1.2em; }
+        nav { background: black; padding: 5px; }
+        nav ul { list-style: none; }
+        nav ul li { display: inline; margin-right: 15px; font-weight: bold; }
+        nav ul li a { color: white; }
+        nav ul li a:visited { color: white; }
+        nav ul li a:hover { color: orange; }
+        a { text-decoration: none; color: blue; }
+        a:visited { color: purple; }
+        a:hover { color: orange; }
+        table { width: 100%; border-collapse: collapse; }
+        table, th, td { border: 1px solid black; }
+        th, td { padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Client Details</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Password</th>
+                <th>Actions</th>
+            </tr>
+            {% for item in items %}
+            <tr>
+                <td>{{ item[1] }}</td>
+                <td>{{ item[2] }}</td>
+                <td><a href="{{ url_for('edit', id=item[0]) }}">Edit</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </main>
+</body>
+</html>
